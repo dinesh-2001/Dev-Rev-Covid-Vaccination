@@ -1,0 +1,64 @@
+{% extends "user_home.html" %}
+{% block p %}
+  {% if centres %}
+      <table id="data" class="table table-striped">
+        <h2>Vaccination Centres</h2>
+        <thead>
+          <tr>
+            <th>Centre ID</th>
+            <th>Centre Name</th>
+            <th>Centre Address</th>
+            <th>Centre Pincode</th>
+            <th>Apply</th>
+          </tr>
+        </thead>
+        <tbody>
+      {% for data in centres %}
+
+        {% if data.pincode == idd %}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.Name}}</td>
+                <td>{{data.Address}}</td>
+                <td>{{data.pincode}}</td>
+                <td><a href="/apply/{{data.id}}"  class="btn btn-outline-danger" >Apply</a></td>
+            </tr>
+        {% endif %}
+
+      {% endfor %}
+
+     
+
+      {% for data in centres %}
+
+        {% if idd == null %}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.Name}}</td>
+                <td>{{data.Address}}</td>
+                <td>{{data.pincode}}</td>
+                <td><a href="/apply/{{data.id}}"  class="btn btn-outline-danger" >Apply</a></td>
+            </tr>
+        {% endif %}
+            
+      {% endfor %}
+
+        </tbody>
+      </table>
+  {% endif %}
+
+  {% if response %}
+
+  
+      <div class="alert alert-success" role="alert">
+        <h3>{{ response }}</h3>
+      </div>
+      <h6>Thank you for being a part of COWIN program {{n}}</h6>
+      <p>Your slot details will be mailed you Shortly...</p>
+  {% endif %}
+
+  {% if responsefailed %}
+        <h3>{{ responsefailed }}</h3>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "admin_home.html" %}
+{% block title %}Add Vaccination Centers{% endblock %}
+{% block VC %}
+    {% if addresult %}
+          <div class="alert alert-success" role="alert">
+              
+                        {{addresult}}
+            
+          </div>
+  {% endif %}
+<form class="form" action="/VC" method="POST">
+    <div class="form-group" >
+        <input type="Number" class="form-control" name="id" placeholder="Centre ID">
+        </div>
+        <div class="form-group">
+      <input type="Name" class="form-control" name="Name" placeholder="Centre Name"></div>
+      <div class="form-group" >
+      <input type="Name" class="form-control" name="Address" placeholder="Centre Address">
+      </div>
+      <div class="form-group" >
+      <input type="Number" class="form-control" name="pincode" placeholder="Cenre Pincode">
+    </div>
+    <div class="form-group" >
+      <input type="Number" min="0" max="10" class="form-control" name="dose" placeholder="Dose (0-10)">
+      </div>
+    
+    <button type="submit" class="btn btn-info" >Add Centre</button>
+  </form>
+
+{% endblock %}

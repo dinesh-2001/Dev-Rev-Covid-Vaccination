@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <style>
+        body  {
+          background-image: url("/static/admin_home.png") ;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-color: #f4f8f9;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <a href="#"><img class="navbar-brand" src="/static/logo.png" height="50px" width="80px">
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/adhome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Add_VC">Add Vaccination Centres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dosage">Get Dosage Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/RVC">Remove Vaccination Centres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/update">Update Centre Dosage</a>
+              </li>
+            </ul>
+        </div><a class="btn btn-outline-warning my-2 my-sm-0" href="/logout" >Log Out</a>
+  
+      </nav>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8"  style="margin-top: 10%">
+            <center>
+            {% block page_content %}
+            {% endblock %}
+            
+            </center>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"  >
+            <center>
+              {% if update_result %}
+              <div class="alert alert-success" role="alert">
+                <h2>{{update_result}}</h2>
+              </div>
+              {% endif %}
+              {% block VC %}
+              {% endblock %}
+              
+            </center>
+            
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8"  style="margin-top: 1%; ">
+            <center>
+                {% block p %}
+                {% endblock %}
+            </center>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+
+    
+</body>
+</html>

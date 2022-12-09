@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+      body  {
+        background-image: url("/static/user.jpg") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #f4f8f9;
+      }
+      </style>
+
+</head>
+<body>
+  
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgba(45, 40, 40, 0.722)">
+      <a href="#"><img class="navbar-brand" src="/static/logo.png" height="50px" width="80px">
+      </a>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+            </li>    
+          </ul>
+        </div>  
+        <span class="navbar-text">
+           Kindly login
+          </span>
+      </nav>
+      <center>
+        <div class="row">
+          <div class="col" style="margin-top: 10%">
+              <h1 style="color:green">Log In</h1>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-sm-4">
+      
+      <form class="form" action="/verifyuser" method="POST">
+        {% if login_result %}
+        <div class="alert alert-danger" role="alert">
+          {{login_result}}
+        </div>         
+        {% endif %}
+        <div class="form-group" style="margin-top: 10%">
+          <input name="email" type="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input name='pas' type="password" class="form-control" placeholder="Password">
+        </div>
+        
+        <button type="submit">Submit</button>
+      </form>
+      <span>Not Having Account? <a class="link-success" href="/reg" style="color: black; text-decoration:None;">Sign Up</a></span>
+      
+        </div>
+        <div class="col"></div>
+      </div>
+    </center><br>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+  {% extends "admin_home.html" %}
+{% block page_content %}
+<h1 style="color: rgb(61, 61, 61) ;">Vaccination Centres</h1>
+    <table id="data" class="table table-striped" style="background-color: rgba(238, 241, 241, 0.721); color:rgb(5, 5, 5)">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>Dose</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in centres %}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.Name}}</td>
+                <td>{{data.Address}}</td>
+                <td>{{data.pincode}}</td>
+                <td>{{data.dose}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endblock %}
+</body>
+</html>

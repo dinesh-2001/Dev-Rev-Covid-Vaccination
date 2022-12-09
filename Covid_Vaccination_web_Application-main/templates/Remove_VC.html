@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    
+{% extends "admin_home.html" %}
+{% block title %}Add Vaccination Centers{% endblock %}
+{% block VC %}
+
+<form class="row g-3 needs-validation" action="/search" method="POST">
+  
+    <div class="input-group mb-3" style="margin-top: 5%">
+      
+      <input type="number" required  class="form-control" name="centre" placeholder="Enter Centre ID Number">
+     
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-info" >Search</button>
+        </div>
+    </div>
+   
+  </form>
+
+{% endblock %}
+
+</body>
+</html>

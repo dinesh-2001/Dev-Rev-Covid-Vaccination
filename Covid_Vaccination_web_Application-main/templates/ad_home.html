@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+    
+{% extends "admin_home.html" %}
+{% block page_content %}
+{% if sum or sum==0%}
+            <h1>We are Successfully Vaccinated {{sum}} vaccines on this day</h1>
+
+            <p>Do you want to set dosage of every vaccination centre to zero</p>
+            <a href="/update" class="btn btn-success" role="button">Manage dosages</a>
+            {% endif %}
+
+{% endblock %}
+
+</body>
+</html>

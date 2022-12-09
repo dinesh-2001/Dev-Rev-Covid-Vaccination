@@ -1,0 +1,35 @@
+{% extends "Remove_VC.html" %}
+{% block p %}
+  {% if centres %}
+  <table id="data" class="table table-striped" style="background-color: rgba(238, 241, 241, 0.721); color:rgb(5, 5, 5)">
+    <thead>
+      <tr>
+        
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Pincode</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in centres %}
+
+      
+      {% if data.id == name %}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.Name}}</td>
+            <td>{{data.Address}}</td>
+            <td>{{data.pincode}}</td>
+            <td><a href="/delete/{{data.id}}"  class="btn btn-outline-danger" >Remove</a></td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+      
+    </tbody>
+  </table>
+  {% endif %}
+
+
+{% endblock %}
